@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Gen-Z</title>
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="hedar">
+    <div class="nav-mine">
+        <div class="nrv-container">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="logo" width="125px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Category</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="login.html">Account</a></li>
+                    <li><a href="logout.html" class="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cart-icon"><img src="shopping-bag.png" alt="cart"></a>
+        </div>
+    </div>
+</header>
+
+<!-- Product Section -->
+<main class="product-page">
+    <div class="product-gallery">
+        <img src="FoYKJXRLuhTjJJgC9qAn55Ae8U8rkT9XqIzWF8zF.jpg" alt="Premium Shirt" class="main-image">
+
+        <!-- thumbnails img -->
+
+        <!-- <div class="thumbnails">
+            <img src="FoYKJXRLuhTjJJgC9qAn55Ae8U8rkT9XqIzWF8zF.jpg" alt="Thumbnail 1">
+            <img src="YdNu0zeaP6MroMwL2wnDXNpJKwPAfUw00LdMbf4X.jpg" alt="Thumbnail 2">
+            <img src="3P.jpg" alt="Thumbnail 3">
+        </div> -->
+    </div>
+
+    <div class="product-details">
+        <h1>Premium Design Shirt For Men's</h1>
+        <p class="previous-price">৳1400</p>
+        <p class="price">৳650</p>
+        <p class="description">
+            Elegant and stylish shirt made with high-quality fabric. Perfect for casual and formal occasions.
+        </p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and iOS mobile phone.</p>
+                <div class="app-logo">
+                    <img src="../image/play-store.png" alt="Play Store">
+                    <img src="../image/app-store.png" alt="App Store">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="logo.png" alt="Logo">
+                <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">© 2025 Gen-Z | Designed by Sojib Hasan</p>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+        const products = [
+            {id:1, name:"Premium Design Shirt 1", img:"5.jpg", price:650, prevPrice:1400, desc:"Elegant shirt for men."},
+            {id:2, name:"Premium Design Shirt 2", img:"6.jpg", price:650, prevPrice:1400, desc:"Stylish and comfortable."},
+            {id:3, name:"Premium Design Shirt 3", img:"7P.jpg", price:650, prevPrice:1400, desc:"Classic design for daily wear."},
+            {id:4, name:"Premium Design Shirt 4", img:"8P.jpg", price:650, prevPrice:1400, desc:"Modern look with quality fabric."},
+            {id:5, name:"Premium Design Shirt 5", img:"9.jpg", price:650, prevPrice:1400, desc:"Trendy and premium shirt."},
+            {id:6, name:"Premium Design Shirt 6", img:"10.jpg", price:650, prevPrice:1400, desc:"Perfect for casual outings."},
+            {id:7, name:"Premium Design Shirt 7", img:"11.jpg", price:650, prevPrice:1400, desc:"Comfortable and stylish."},
+            {id:8, name:"Premium Design Shirt 8", img:"12.jpg", price:650, prevPrice:1400, desc:"High quality premium shirt."}
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get('id'));
+        const product = products.find(p => p.id === id) || products[0]; // default 1st product
+
+        document.querySelector('.main-image').src = product.img;
+        document.querySelector('.product-name').innerText = product.name;
+        document.querySelector('.price').innerText = `৳${product.price}`;
+        document.querySelector('.previous-price').innerText = `৳${product.prevPrice}`;
+        document.querySelector('.description').innerText = product.desc;
+    </script>
+<!-- <script>
+    // Thumbnail click to change main image
+    const mainImage = document.querySelector('.main-image');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+    thumbnails.forEach(img => {
+        img.addEventListener('click', () => {
+            mainImage.src = img.src;
+        });
+    });
+    
+    // Add to Cart alert
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+        alert('Product added to cart!');
+    });
+</script> -->
+</body>
+</html>
